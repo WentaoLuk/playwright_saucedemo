@@ -26,10 +26,10 @@ jobs:
         run: npx playwright install --with-deps
 
       - name: Run Playwright tests
-        run: npx playwright test --reporter=list
+        run: npx playwright test --reporter=html
 
-      # - name: Upload Playwright report (optional)
-      #   uses: actions/upload-artifact@v3.1.3
-      #   with:
-      #     name: playwright-report
-      #     path: playwright-report
+      - name: Upload Playwright report (optional)
+        uses: actions/upload-artifact@v3
+        with:
+          name: playwright-report
+          path: playwright-report
